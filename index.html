@@ -3,206 +3,453 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project Mira — Etsy Store and SMM Roadmap</title>
+<title>Project Mira — Etsy &amp; Social Media Roadmap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --pm-gold:#BA7517;--pm-gold-light:#FAEEDA;--pm-gold-mid:#FAC775;
-  --pm-earth:#633806;--pm-earth-dark:#412402;
-  --pm-teal:#1D9E75;--pm-teal-light:#E1F5EE;
-  --pm-purple:#534AB7;--pm-purple-light:#EEEDFE;
-  --pm-coral:#D85A30;--pm-coral-light:#FAECE7;
-  --color-background-primary:#ffffff;
-  --color-background-secondary:#f5f5f4;
-  --color-text-primary:#1c1917;
-  --color-text-secondary:#57534e;
-  --color-text-tertiary:#a8a29e;
-  --color-border-tertiary:#e7e5e4;
-  --color-border-secondary:#d6d3d1;
-  --font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --bg-page:#B8A878;
+  --bg-card:#FAF6EC;
+  --bg-card-alt:#F0EAD8;
+  --bg-dark:#2C1A0E;
+  --bg-dark2:#412402;
+  --gold:#B8860B;
+  --gold-light:#FAEEDA;
+  --gold-mid:#D4A840;
+  --gold-border:#D4A840;
+  --earth:#5C3510;
+  --teal:#1D9E75;
+  --teal-light:#D4F0E6;
+  --purple:#534AB7;
+  --purple-light:#EEEDFE;
+  --coral:#C0502A;
+  --coral-light:#FAE8E0;
+  --text-primary:#1A0F06;
+  --text-secondary:#5C3D1E;
+  --text-muted:#8C6D4A;
+  --border:#D4BC88;
+  --border-light:#E8D9B8;
+  --font-display:'Cormorant Garamond',Georgia,serif;
+  --font-body:'Inter',system-ui,sans-serif;
 }
-body{background:#fafaf9;font-family:var(--font-sans);color:var(--color-text-primary);padding:1.5rem}
-.wrap{max-width:900px;margin:0 auto;padding-bottom:3rem}
 
-.hero{background:#2C1A0E;border-radius:16px;padding:2rem 2rem 1.75rem;margin-bottom:2rem;position:relative;overflow:hidden}
-.hero-accent{position:absolute;right:-20px;top:-20px;width:160px;height:160px;border-radius:50%;background:#412402;opacity:0.5}
-.hero-accent2{position:absolute;right:60px;bottom:-40px;width:100px;height:100px;border-radius:50%;background:#633806;opacity:0.4}
-.hero-eyebrow{font-size:11px;letter-spacing:0.1em;color:#EF9F27;text-transform:uppercase;font-weight:500;margin-bottom:0.6rem}
-.hero h1{font-size:24px;font-weight:500;color:#F7EDD8;line-height:1.3;margin-bottom:0.5rem;position:relative}
-.hero p{font-size:13px;color:#C4A882;line-height:1.7;max-width:520px;position:relative}
-.hero-meta{display:flex;gap:1.5rem;margin-top:1.25rem;position:relative;flex-wrap:wrap}
-.hero-stat .val{font-size:20px;font-weight:500;color:#FAC775}
-.hero-stat .lbl{font-size:11px;color:#9C7A54;margin-top:1px}
-.hero-divider{width:0.5px;background:#412402}
+body{
+  background:var(--bg-page);
+  font-family:var(--font-body);
+  color:var(--text-primary);
+  min-height:100vh;
+  padding:2rem 1.5rem 4rem;
+}
 
-.nav-bar{display:flex;gap:6px;margin-bottom:2rem;flex-wrap:wrap}
-.nav-btn{padding:8px 14px;border-radius:8px;border:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);color:var(--color-text-secondary);font-size:12px;font-weight:500;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:6px}
-.nav-btn:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
-.nav-btn.active{background:#2C1A0E;color:#F7EDD8;border-color:#2C1A0E}
+.wrap{max-width:960px;margin:0 auto}
+
+/* ── HERO ── */
+.hero{
+  background:var(--bg-dark);
+  border-radius:20px;
+  padding:2.5rem 2.5rem 2rem;
+  margin-bottom:1.5rem;
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(212,168,64,0.25);
+  box-shadow:0 8px 40px rgba(28,10,2,0.35);
+}
+.hero::before{
+  content:'';position:absolute;right:-40px;top:-40px;
+  width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle,#5C3510 0%,transparent 70%);
+  opacity:0.6;
+}
+.hero::after{
+  content:'';position:absolute;left:-30px;bottom:-50px;
+  width:180px;height:180px;border-radius:50%;
+  background:radial-gradient(circle,#412402 0%,transparent 70%);
+  opacity:0.4;
+}
+.hero-eyebrow{
+  font-family:var(--font-body);
+  font-size:18px;
+  letter-spacing:0.14em;
+  color:var(--gold-mid);
+  text-transform:uppercase;
+  font-weight:500;
+  margin-bottom:1.75rem;
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.hero-eyebrow::after{
+  content:'';flex:1;height:1px;
+  background:linear-gradient(to right,rgba(212,168,64,0.4),transparent);
+}
+.hero-meta{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  position:relative;
+  z-index:1;
+  border:1px solid rgba(212,168,64,0.2);
+  border-radius:12px;
+  overflow:hidden;
+}
+.hero-stat{
+  padding:1.1rem 1.25rem;
+  border-right:1px solid rgba(212,168,64,0.15);
+  background:rgba(255,255,255,0.03);
+}
+.hero-stat:last-child{border-right:none}
+.hero-stat .val{
+  font-family:var(--font-display);
+  font-size:28px;
+  font-weight:500;
+  color:#FAC775;
+  line-height:1.1;
+}
+.hero-stat .lbl{
+  font-size:12px;
+  color:rgba(196,168,130,0.75);
+  margin-top:3px;
+  letter-spacing:0.01em;
+}
+
+/* ── NAV ── */
+.nav-bar{
+  display:flex;
+  gap:6px;
+  margin-bottom:1.75rem;
+  flex-wrap:wrap;
+  background:rgba(28,10,2,0.15);
+  padding:6px;
+  border-radius:14px;
+  backdrop-filter:blur(4px);
+  border:1px solid rgba(212,188,136,0.3);
+}
+.nav-btn{
+  padding:10px 18px;
+  border-radius:9px;
+  border:none;
+  background:transparent;
+  color:rgba(26,15,6,0.7);
+  font-size:13px;
+  font-weight:500;
+  cursor:pointer;
+  transition:all 0.18s;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  font-family:var(--font-body);
+  letter-spacing:0.01em;
+}
+.nav-btn:hover{background:rgba(255,255,255,0.35);color:var(--text-primary)}
+.nav-btn.active{
+  background:var(--bg-dark);
+  color:#F7EDD8;
+  box-shadow:0 2px 12px rgba(28,10,2,0.3);
+}
+.nav-btn i{font-size:15px}
+
+/* ── CONTENT AREA ── */
+.content-panel{
+  background:var(--bg-card);
+  border-radius:16px;
+  padding:2rem;
+  border:1px solid var(--border-light);
+  box-shadow:0 4px 24px rgba(28,10,2,0.12);
+}
 
 .section{display:none}
 .section.active{display:block}
 
-.section-header{margin-bottom:1.5rem}
-.section-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.08em;color:var(--pm-gold);text-transform:uppercase;margin-bottom:0.4rem}
-.section-header h2{font-size:20px;font-weight:500;color:var(--color-text-primary);margin-bottom:0.4rem}
-.section-header p{font-size:13px;color:var(--color-text-secondary);line-height:1.6}
+/* ── SECTION HEADERS ── */
+.section-eyebrow{
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:0.1em;
+  color:var(--gold);
+  text-transform:uppercase;
+  margin-bottom:0.4rem;
+}
+.section-header{margin-bottom:1.75rem}
+.section-header h2{
+  font-family:var(--font-display);
+  font-size:28px;
+  font-weight:400;
+  color:var(--text-primary);
+  margin-bottom:0.4rem;
+  line-height:1.25;
+}
+.section-header p{
+  font-size:14px;
+  color:var(--text-secondary);
+  line-height:1.65;
+}
 
-.phase-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:1.75rem}
-.phase-card{border-radius:12px;padding:1.25rem;border:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary)}
-.phase-dot{width:10px;height:10px;border-radius:50%;margin-bottom:0.75rem}
-.phase-card .phase-label{font-size:10px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px}
-.phase-card h3{font-size:15px;font-weight:500;margin-bottom:0.75rem;color:var(--color-text-primary)}
-.phase-card .comm-badge{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:500;margin-bottom:0.75rem}
+/* ── PHASE CARDS ── */
+.phase-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:2rem}
+.phase-card{
+  border-radius:14px;
+  padding:1.4rem;
+  border:1px solid var(--border-light);
+  background:var(--bg-card-alt);
+  transition:box-shadow 0.2s;
+}
+.phase-card:hover{box-shadow:0 4px 20px rgba(28,10,2,0.1)}
+.phase-dot{width:10px;height:10px;border-radius:50%;margin-bottom:0.85rem}
+.phase-label{font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:5px}
+.phase-card h3{
+  font-family:var(--font-display);
+  font-size:20px;
+  font-weight:400;
+  margin-bottom:0.85rem;
+  color:var(--text-primary);
+}
+.comm-badge{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:500;margin-bottom:0.85rem}
 .phase-card ul{list-style:none;padding:0}
-.phase-card ul li{font-size:12px;color:var(--color-text-secondary);padding:4px 0;display:flex;align-items:flex-start;gap:7px;line-height:1.5;border-top:0.5px solid var(--color-border-tertiary)}
+.phase-card ul li{
+  font-size:13px;
+  color:var(--text-secondary);
+  padding:5px 0;
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+  line-height:1.5;
+  border-top:1px solid var(--border-light);
+}
 .phase-card ul li:first-child{border-top:none}
+.phase-card ul li i{font-size:14px;margin-top:1px;flex-shrink:0}
 
-.action-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;border:0.5px solid;transition:all 0.15s;margin-top:0.75rem}
+/* ── BUTTONS ── */
+.action-btn{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:10px 18px;border-radius:9px;
+  font-size:13px;font-weight:500;cursor:pointer;
+  border:1px solid;transition:all 0.15s;margin-top:0.85rem;
+  font-family:var(--font-body);
+}
 .action-btn:active{transform:scale(0.97)}
-.btn-primary{background:#2C1A0E;color:#F7EDD8;border-color:#2C1A0E}
-.btn-primary:hover{background:#412402}
-.btn-ghost{background:transparent;color:var(--color-text-primary);border-color:var(--color-border-secondary)}
-.btn-ghost:hover{background:var(--color-background-secondary)}
-.btn-gold{background:#FAEEDA;color:#633806;border-color:#FAC775}
+.btn-primary{background:var(--bg-dark);color:#F7EDD8;border-color:var(--bg-dark)}
+.btn-primary:hover{background:var(--bg-dark2)}
+.btn-ghost{background:transparent;color:var(--text-primary);border-color:var(--border)}
+.btn-ghost:hover{background:rgba(255,255,255,0.5)}
+.btn-gold{background:var(--gold-light);color:var(--earth);border-color:#D4A840}
 .btn-gold:hover{background:#FAC775}
-.btn-teal{background:#E1F5EE;color:#085041;border-color:#9FE1CB}
+.btn-teal{background:var(--teal-light);color:#085041;border-color:#9FE1CB}
 .btn-teal:hover{background:#9FE1CB}
 
-.step-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.5rem}
-.step-item{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:12px;padding:1.1rem}
-.step-num-badge{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#FAEEDA;color:#633806;font-size:12px;font-weight:500;margin-bottom:0.6rem}
-.step-item h4{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:8px}
+/* ── KPI GRID ── */
+.kpi-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:1.5rem}
+.kpi-card{
+  background:var(--bg-dark);
+  border-radius:12px;padding:1.1rem;text-align:center;
+  border:1px solid rgba(212,168,64,0.2);
+}
+.kpi-val{font-family:var(--font-display);font-size:26px;font-weight:400;color:#FAC775}
+.kpi-lbl{font-size:12px;color:rgba(196,168,130,0.8);margin-top:3px}
+.kpi-sub{font-size:11px;color:#5DCAA5;margin-top:3px;font-weight:500}
+
+/* ── STEPS ── */
+.step-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:1.5rem}
+.step-item{
+  background:var(--bg-card-alt);
+  border:1px solid var(--border-light);
+  border-radius:14px;padding:1.25rem;
+}
+.step-num-badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;border-radius:50%;
+  background:var(--bg-dark);color:#FAC775;
+  font-size:12px;font-weight:600;margin-bottom:0.7rem;
+  font-family:var(--font-display);letter-spacing:0.02em;
+}
+.step-item h4{font-size:14px;font-weight:600;color:var(--text-primary);margin-bottom:10px}
 .step-item ul{list-style:none;padding:0}
-.step-item ul li{font-size:12px;color:var(--color-text-secondary);padding:3px 0;display:flex;gap:6px;align-items:flex-start;line-height:1.5}
-.step-item ul li::before{content:"·";color:var(--color-text-tertiary);flex-shrink:0}
-.status-pill{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:500;margin-bottom:8px}
-.pill-warn{background:#FAECE7;color:#712B13}
+.step-item ul li{
+  font-size:13px;color:var(--text-secondary);
+  padding:4px 0;display:flex;gap:7px;
+  align-items:flex-start;line-height:1.5;
+}
+.step-item ul li::before{content:"·";color:var(--text-muted);flex-shrink:0}
+.status-pill{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;margin-bottom:8px;letter-spacing:0.02em}
+.pill-warn{background:var(--coral-light);color:var(--coral)}
 
-.timeline{position:relative;padding-left:1.5rem;margin-bottom:1.5rem}
-.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--color-border-tertiary)}
-.tl-item{position:relative;margin-bottom:1.25rem}
-.tl-dot{position:absolute;left:-1.6rem;top:3px;width:12px;height:12px;border-radius:50%;border:2px solid #1D9E75;background:var(--color-background-primary)}
-.tl-week{font-size:11px;font-weight:500;color:#0F6E56;letter-spacing:0.05em;margin-bottom:3px}
-.tl-item h4{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:5px}
-.tl-item p{font-size:12px;color:var(--color-text-secondary);line-height:1.6}
-.tl-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}
-.tl-tag{background:var(--color-background-secondary);border-radius:4px;padding:2px 8px;font-size:11px;color:var(--color-text-secondary)}
+/* ── TIMELINE ── */
+.timeline{position:relative;padding-left:1.75rem;margin-bottom:1.5rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1.5px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:1.5rem}
+.tl-dot{position:absolute;left:-2.1rem;top:4px;width:14px;height:14px;border-radius:50%;border:2.5px solid var(--teal);background:var(--bg-card)}
+.tl-week{font-size:11px;font-weight:600;color:var(--teal);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:4px}
+.tl-item h4{font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--text-primary);margin-bottom:5px}
+.tl-item p{font-size:13px;color:var(--text-secondary);line-height:1.65}
+.tl-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+.tl-tag{background:rgba(28,10,2,0.07);border-radius:5px;padding:3px 9px;font-size:11px;color:var(--text-secondary);border:1px solid var(--border-light)}
 
-.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.25rem}
-.product-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:12px;padding:1rem}
-.product-card.hero-p{border-color:#FAC775;border-width:1.5px}
-.product-hero-badge{display:inline-flex;align-items:center;gap:4px;background:#FAEEDA;color:#633806;border-radius:4px;padding:3px 8px;font-size:10px;font-weight:500;margin-bottom:8px}
-.product-card h4{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:5px}
-.product-card .price{font-size:16px;font-weight:500;color:#BA7517;margin-bottom:6px}
-.product-card p{font-size:12px;color:var(--color-text-secondary);line-height:1.5;margin-bottom:8px}
-.product-stars{color:#BA7517;font-size:12px;margin-bottom:6px}
+/* ── PRODUCTS ── */
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:1.5rem}
+.product-card{
+  background:var(--bg-card-alt);border:1px solid var(--border-light);
+  border-radius:14px;padding:1.1rem;transition:box-shadow 0.2s;
+}
+.product-card:hover{box-shadow:0 4px 16px rgba(28,10,2,0.1)}
+.product-card.hero-p{border-color:var(--gold-border);border-width:1.5px}
+.product-hero-badge{display:inline-flex;align-items:center;gap:4px;background:var(--bg-dark);color:#FAC775;border-radius:5px;padding:3px 9px;font-size:10px;font-weight:600;margin-bottom:9px;letter-spacing:0.04em}
+.product-card h4{font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--text-primary);margin-bottom:5px}
+.product-card .price{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--gold);margin-bottom:7px}
+.product-card p{font-size:13px;color:var(--text-secondary);line-height:1.55;margin-bottom:9px}
+.product-stars{color:var(--gold);font-size:13px;margin-bottom:7px}
 
-.bundle-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.5rem}
-.bundle-card{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:12px;padding:1rem}
-.bundle-card h4{font-size:13px;font-weight:500;margin-bottom:4px;color:var(--color-text-primary)}
-.bundle-price{font-size:20px;font-weight:500;color:#BA7517;margin-bottom:6px}
-.bundle-card p{font-size:12px;color:var(--color-text-secondary);line-height:1.5;margin-bottom:10px}
+.bundle-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:1.5rem}
+.bundle-card{
+  background:var(--bg-dark);border:1px solid rgba(212,168,64,0.2);
+  border-radius:14px;padding:1.1rem;
+}
+.bundle-card h4{font-family:var(--font-display);font-size:17px;font-weight:400;margin-bottom:5px;color:#F7EDD8}
+.bundle-price{font-family:var(--font-display);font-size:24px;font-weight:400;color:#FAC775;margin-bottom:7px}
+.bundle-card p{font-size:13px;color:rgba(196,168,130,0.85);line-height:1.55;margin-bottom:10px}
 
-.smm-accordion{margin-bottom:0.5rem}
-.acc-header{display:flex;align-items:center;gap:10px;padding:0.9rem 1rem;border-radius:10px;border:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);cursor:pointer;transition:background 0.12s;user-select:none}
-.acc-header:hover{background:var(--color-background-secondary)}
-.acc-header.open{border-bottom-left-radius:0;border-bottom-right-radius:0;background:var(--color-background-secondary)}
-.acc-num{width:26px;height:26px;border-radius:50%;background:#EEEDFE;color:#3C3489;font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.acc-title{font-size:13px;font-weight:500;color:var(--color-text-primary);flex:1}
-.acc-meta{font-size:11px;color:var(--color-text-secondary)}
-.acc-chevron{font-size:16px;color:var(--color-text-secondary);transition:transform 0.2s}
+/* ── SMM ACCORDIONS ── */
+.smm-accordion{margin-bottom:6px}
+.acc-header{
+  display:flex;align-items:center;gap:12px;
+  padding:1rem 1.1rem;border-radius:12px;
+  border:1px solid var(--border-light);
+  background:var(--bg-card-alt);
+  cursor:pointer;transition:all 0.15s;user-select:none;
+}
+.acc-header:hover{background:rgba(255,255,255,0.6);border-color:var(--border)}
+.acc-header.open{border-bottom-left-radius:0;border-bottom-right-radius:0;background:rgba(255,255,255,0.6);border-color:var(--border)}
+.acc-num{
+  width:28px;height:28px;border-radius:50%;
+  background:var(--bg-dark);color:#FAC775;
+  font-size:12px;font-weight:600;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.acc-title{font-size:14px;font-weight:600;color:var(--text-primary);flex:1}
+.acc-meta{font-size:12px;color:var(--text-muted)}
+.acc-chevron{font-size:17px;color:var(--text-muted);transition:transform 0.2s}
 .acc-chevron.open{transform:rotate(180deg)}
-.acc-body{border:0.5px solid var(--color-border-tertiary);border-top:none;border-radius:0 0 10px 10px;padding:1rem;background:var(--color-background-primary);display:none}
+.acc-body{
+  border:1px solid var(--border);border-top:none;
+  border-radius:0 0 12px 12px;padding:1.1rem;
+  background:rgba(255,255,255,0.45);display:none;
+}
 .acc-body.open{display:block}
 .acc-body ul{list-style:none;padding:0}
-.acc-body ul li{font-size:12px;color:var(--color-text-secondary);padding:4px 0;display:flex;gap:8px;align-items:flex-start;line-height:1.5;border-bottom:0.5px solid var(--color-border-tertiary)}
+.acc-body ul li{
+  font-size:13px;color:var(--text-secondary);padding:5px 0;
+  display:flex;gap:9px;align-items:flex-start;line-height:1.6;
+  border-bottom:1px solid var(--border-light);
+}
 .acc-body ul li:last-child{border-bottom:none}
-.acc-body ul li i{font-size:13px;color:var(--pm-teal);flex-shrink:0;margin-top:1px}
-.acc-body p{font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:0.75rem}
+.acc-body ul li i{font-size:14px;color:var(--teal);flex-shrink:0;margin-top:1px}
+.acc-body p{font-size:13px;color:var(--text-secondary);line-height:1.65;margin-bottom:0.85rem}
 .acc-actions{display:flex;gap:8px;margin-top:1rem;flex-wrap:wrap}
 
-.kpi-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:1.25rem}
-.kpi-card{background:var(--color-background-secondary);border-radius:10px;padding:1rem;text-align:center}
-.kpi-val{font-size:22px;font-weight:500;color:var(--color-text-primary)}
-.kpi-lbl{font-size:11px;color:var(--color-text-secondary);margin-top:3px}
-.kpi-sub{font-size:11px;color:var(--pm-teal);margin-top:2px;font-weight:500}
+/* ── CALENDAR ── */
+.cal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:1.5rem}
+.cal-card{
+  background:var(--bg-card-alt);border:1px solid var(--border-light);
+  border-radius:12px;padding:1rem;
+}
+.cal-month{font-size:10px;font-weight:700;letter-spacing:0.1em;color:var(--coral);text-transform:uppercase;margin-bottom:5px}
+.cal-card h5{font-family:var(--font-display);font-size:16px;font-weight:500;color:var(--text-primary);margin-bottom:6px}
+.cal-card p{font-size:12px;color:var(--text-secondary);line-height:1.55}
 
-.cal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.25rem}
-.cal-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:10px;padding:0.9rem}
-.cal-month{font-size:10px;font-weight:500;letter-spacing:0.06em;color:#D85A30;text-transform:uppercase;margin-bottom:4px}
-.cal-card h5{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:5px}
-.cal-card p{font-size:11px;color:var(--color-text-secondary);line-height:1.5}
+.sched-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:1.5rem}
+.sched-card{background:var(--bg-card-alt);border:1px solid var(--border-light);border-radius:14px;padding:1.1rem}
+.sched-head{display:flex;align-items:center;gap:9px;margin-bottom:0.85rem}
+.sched-icon{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center}
+.sched-plat{font-size:14px;font-weight:600;color:var(--text-primary)}
+.sched-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-top:1px solid var(--border-light)}
+.sched-day{font-size:13px;color:var(--text-primary)}
+.sched-time{font-size:13px;color:var(--text-secondary)}
 
-.sched-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.25rem}
-.sched-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:10px;padding:1rem}
-.sched-head{display:flex;align-items:center;gap:8px;margin-bottom:0.75rem}
-.sched-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center}
-.sched-plat{font-size:12px;font-weight:500;color:var(--color-text-primary)}
-.sched-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-top:0.5px solid var(--color-border-tertiary)}
-.sched-day{font-size:12px;color:var(--color-text-primary)}
-.sched-time{font-size:12px;color:var(--color-text-secondary)}
+/* ── CONTENT PILLARS ── */
+.content-pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin-bottom:1.5rem}
+.pillar-card{background:var(--bg-card-alt);border:1px solid var(--border-light);border-radius:12px;padding:0.85rem;text-align:center}
+.pillar-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin:0 auto 9px;font-size:17px}
+.pillar-card h5{font-size:12px;font-weight:600;color:var(--text-primary);margin-bottom:3px}
+.pillar-card p{font-size:11px;color:var(--text-muted);line-height:1.4}
 
-.checklist{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:1.25rem}
-.check-item{display:flex;align-items:flex-start;gap:8px;padding:10px 12px;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:8px;cursor:pointer}
-.check-item.done .check-box{background:#E1F5EE;border-color:#1D9E75;color:#0F6E56}
-.check-box{width:20px;height:20px;border-radius:5px;border:1.5px solid var(--color-border-secondary);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.15s}
+/* ── HASHTAGS ── */
+.hashtag-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:1.5rem}
+.hashtag-group{background:var(--bg-card-alt);border:1px solid var(--border-light);border-radius:12px;padding:1.1rem}
+.hashtag-group h5{font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:9px}
+.ht-tags{display:flex;flex-wrap:wrap;gap:5px}
+.ht-tag{padding:4px 9px;border-radius:5px;font-size:12px;font-weight:500}
+.ht-brand{background:var(--purple-light);color:#3C3489}
+.ht-high{background:var(--gold-light);color:var(--earth)}
+.ht-med{background:var(--teal-light);color:#085041}
+.ht-niche{background:var(--coral-light);color:var(--coral)}
+
+/* ── CHECKLIST ── */
+.checklist{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:1.5rem}
+.check-item{
+  display:flex;align-items:flex-start;gap:9px;
+  padding:11px 13px;background:var(--bg-card-alt);
+  border:1px solid var(--border-light);border-radius:10px;cursor:pointer;
+  transition:all 0.15s;
+}
+.check-item:hover{border-color:var(--border);background:rgba(255,255,255,0.5)}
+.check-item.done .check-box{background:var(--teal-light);border-color:var(--teal);color:#085041}
+.check-box{
+  width:20px;height:20px;border-radius:5px;
+  border:1.5px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:all 0.15s;
+}
 .check-box i{font-size:12px;display:none}
 .check-item.done .check-box i{display:block}
-.check-text{font-size:12px;color:var(--color-text-secondary);line-height:1.4}
-.check-item.done .check-text{color:var(--color-text-tertiary);text-decoration:line-through}
+.check-text{font-size:13px;color:var(--text-secondary);line-height:1.45}
+.check-item.done .check-text{color:var(--text-muted);text-decoration:line-through}
 
-.progress-bar-wrap{margin-bottom:1.25rem}
-.progress-label{display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px}
-.progress-label span:first-child{color:var(--color-text-secondary)}
-.progress-label span:last-child{font-weight:500;color:var(--color-text-primary)}
-.progress-track{height:6px;background:var(--color-background-secondary);border-radius:3px;overflow:hidden}
-.progress-fill{height:100%;border-radius:3px;background:#1D9E75;transition:width 0.6s ease}
+.progress-bar-wrap{margin-bottom:1.5rem}
+.progress-label{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px}
+.progress-label span:first-child{color:var(--text-secondary)}
+.progress-label span:last-child{font-weight:600;color:var(--text-primary)}
+.progress-track{height:7px;background:var(--border-light);border-radius:4px;overflow:hidden}
+.progress-fill{height:100%;border-radius:4px;background:var(--teal);transition:width 0.6s ease}
 
-.note-bar{background:#FAEEDA;border-left:3px solid #BA7517;border-radius:0 8px 8px 0;padding:10px 14px;font-size:12px;color:#633806;line-height:1.6;margin-bottom:1.25rem}
+.note-bar{
+  background:var(--gold-light);border-left:3px solid var(--gold);
+  border-radius:0 10px 10px 0;padding:12px 16px;
+  font-size:13px;color:var(--earth);line-height:1.65;margin-bottom:1.5rem;
+}
 
-.content-pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:1.25rem}
-.pillar-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:10px;padding:0.75rem;text-align:center}
-.pillar-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-size:16px}
-.pillar-card h5{font-size:11px;font-weight:500;color:var(--color-text-primary);margin-bottom:3px}
-.pillar-card p{font-size:10px;color:var(--color-text-secondary);line-height:1.4}
-
-.hashtag-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:1.25rem}
-.hashtag-group{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:10px;padding:1rem}
-.hashtag-group h5{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:8px}
-.ht-tags{display:flex;flex-wrap:wrap;gap:4px}
-.ht-tag{padding:3px 8px;border-radius:4px;font-size:11px}
-.ht-brand{background:#EEEDFE;color:#3C3489}
-.ht-high{background:#FAEEDA;color:#633806}
-.ht-med{background:#E1F5EE;color:#085041}
-.ht-niche{background:#FAECE7;color:#712B13}
-
-@media(max-width:600px){
-  .phase-row,.step-list,.product-grid,.bundle-row,.kpi-grid,.cal-grid,.sched-grid,.checklist,.content-pillars,.hashtag-groups{grid-template-columns:1fr}
+@media(max-width:640px){
+  body{padding:1rem 1rem 3rem}
+  .content-panel{padding:1.25rem}
+  .hero{padding:1.5rem}
+  .hero-meta{grid-template-columns:1fr 1fr}
+  .phase-row,.step-list,.product-grid,.bundle-row,.kpi-grid,
+  .cal-grid,.sched-grid,.checklist,.content-pillars,.hashtag-groups{grid-template-columns:1fr}
+  .hero-eyebrow{font-size:14px}
 }
 </style>
 </head>
 <body>
 <div class="wrap">
 
+<!-- HERO -->
 <div class="hero">
-  <div class="hero-accent"></div>
-  <div class="hero-accent2"></div>
-  <div class="hero-eyebrow"><i class="ti ti-leaf" style="margin-right:5px"></i>Project Mira — Etsy &amp; Social Media Roadmap</div>
-  <h1>From boutique brand to Etsy bestseller</h1>
-  <p>A complete 6-month growth strategy for Project Mira's Etsy expansion — combining store setup, SEO, product sequencing, and a full social media system built around 14 strategic frameworks.</p>
+  <div class="hero-eyebrow">
+    <i class="ti ti-leaf"></i>
+    Project Mira — Etsy &amp; Social Media Roadmap
+  </div>
+  <p style="font-size:14px;color:#C4A882;line-height:1.75;max-width:560px;position:relative;z-index:1;margin-bottom:1.75rem;">A complete 6-month growth strategy for Project Mira's Etsy expansion — combining store setup, SEO, product sequencing, and a full social media system built around 14 strategic frameworks.</p>
   <div class="hero-meta">
     <div class="hero-stat"><div class="val">8</div><div class="lbl">Products to list</div></div>
-    <div class="hero-divider"></div>
     <div class="hero-stat"><div class="val">$30–$90</div><div class="lbl">Price range</div></div>
-    <div class="hero-divider"></div>
     <div class="hero-stat"><div class="val">6 mo.</div><div class="lbl">Launch runway</div></div>
-    <div class="hero-divider"></div>
     <div class="hero-stat"><div class="val">25%</div><div class="lbl">Peak commission</div></div>
   </div>
 </div>
 
+<!-- NAV -->
 <div class="nav-bar">
   <button class="nav-btn active" data-tab="overview"><i class="ti ti-layout-dashboard"></i>Overview</button>
   <button class="nav-btn" data-tab="store"><i class="ti ti-store"></i>Store setup</button>
@@ -212,19 +459,22 @@ body{background:#fafaf9;font-family:var(--font-sans);color:var(--color-text-prim
   <button class="nav-btn" data-tab="checklist"><i class="ti ti-checkbox"></i>Checklist</button>
 </div>
 
+<!-- CONTENT PANEL -->
+<div class="content-panel">
+
 <!-- OVERVIEW -->
 <div id="tab-overview" class="section active">
   <div class="section-header">
     <div class="section-eyebrow">Growth plan at a glance</div>
     <h2>Three phases to Etsy dominance</h2>
-    <p>Each phase unlocks a higher commission tier only when the store is already generating significantly more revenue.</p>
+    <p>Each phase unlocks a higher commission tier only when the store is already generating significantly more revenue — designed so both sides win as it scales.</p>
   </div>
   <div class="phase-row">
     <div class="phase-card">
       <div class="phase-dot" style="background:#FAC775"></div>
       <div class="phase-label" style="color:#854F0B">Phase 1 · Month 1–3</div>
       <h3>Store building</h3>
-      <span class="comm-badge" style="background:#FAEEDA;color:#633806"><i class="ti ti-coin" style="font-size:12px"></i>15% commission</span>
+      <span class="comm-badge" style="background:#FAEEDA;color:#633806"><i class="ti ti-coin" style="font-size:13px"></i>15% commission</span>
       <ul>
         <li><i class="ti ti-circle-check" style="color:#1D9E75"></i>Launch 3 hero products (Lavender Dream, Muscle Zen, Royal Elixir)</li>
         <li><i class="ti ti-circle-check" style="color:#1D9E75"></i>Build shop branding matching pmprojectmira.com</li>
@@ -238,7 +488,7 @@ body{background:#fafaf9;font-family:var(--font-sans);color:var(--color-text-prim
       <div class="phase-dot" style="background:#5DCAA5"></div>
       <div class="phase-label" style="color:#0F6E56">Phase 2 · Month 4+</div>
       <h3>Growth</h3>
-      <span class="comm-badge" style="background:#E1F5EE;color:#085041"><i class="ti ti-coin" style="font-size:12px"></i>20% on 150+ bottles/mo</span>
+      <span class="comm-badge" style="background:#D4F0E6;color:#085041"><i class="ti ti-coin" style="font-size:13px"></i>20% on 150+ bottles/mo</span>
       <ul>
         <li><i class="ti ti-circle-check" style="color:#1D9E75"></i>Full product lineup (8 singles + 4 bundles) live</li>
         <li><i class="ti ti-circle-check" style="color:#1D9E75"></i>Etsy Ads running at $3–5/day on top performers</li>
@@ -252,7 +502,7 @@ body{background:#fafaf9;font-family:var(--font-sans);color:var(--color-text-prim
       <div class="phase-dot" style="background:#AFA9EC"></div>
       <div class="phase-label" style="color:#3C3489">Phase 3 · Month 6+</div>
       <h3>Thriving</h3>
-      <span class="comm-badge" style="background:#EEEDFE;color:#3C3489"><i class="ti ti-coin" style="font-size:12px"></i>25% on 300+ bottles/mo</span>
+      <span class="comm-badge" style="background:#EEEDFE;color:#3C3489"><i class="ti ti-coin" style="font-size:13px"></i>25% on 300+ bottles/mo</span>
       <ul>
         <li><i class="ti ti-circle-check" style="color:#1D9E75"></i>Niche dominance: top-3 Etsy ranking for hero keywords</li>
         <li><i class="ti ti-circle-check" style="color:#1D9E75"></i>Seasonal campaign engine running (holiday, Mother's Day)</li>
@@ -264,12 +514,12 @@ body{background:#fafaf9;font-family:var(--font-sans);color:var(--color-text-prim
     </div>
   </div>
   <div class="kpi-grid">
-    <div class="kpi-card"><div class="kpi-val">30</div><div class="kpi-lbl">Bottles/mo target · Month 1</div><div class="kpi-sub">building reviews</div></div>
-    <div class="kpi-card"><div class="kpi-val">150</div><div class="kpi-lbl">Bottles/mo target · Month 4</div><div class="kpi-sub">20% commission unlocked</div></div>
-    <div class="kpi-card"><div class="kpi-val">300</div><div class="kpi-lbl">Bottles/mo target · Month 6</div><div class="kpi-sub">25% commission unlocked</div></div>
+    <div class="kpi-card"><div class="kpi-val">30</div><div class="kpi-lbl">Bottles/mo · Month 1</div><div class="kpi-sub">building reviews</div></div>
+    <div class="kpi-card"><div class="kpi-val">150</div><div class="kpi-lbl">Bottles/mo · Month 4</div><div class="kpi-sub">20% commission unlocked</div></div>
+    <div class="kpi-card"><div class="kpi-val">300</div><div class="kpi-lbl">Bottles/mo · Month 6</div><div class="kpi-sub">25% commission unlocked</div></div>
     <div class="kpi-card"><div class="kpi-val">4.8★</div><div class="kpi-lbl">Target Etsy review average</div><div class="kpi-sub">trust signal for algorithm</div></div>
     <div class="kpi-card"><div class="kpi-val">5K</div><div class="kpi-lbl">Instagram followers · Month 6</div><div class="kpi-sub">consistent shop traffic</div></div>
-    <div class="kpi-card"><div class="kpi-val">3–5%</div><div class="kpi-lbl">Etsy listing conversion rate</div><div class="kpi-sub">industry benchmark</div></div>
+    <div class="kpi-card"><div class="kpi-val">3–5%</div><div class="kpi-lbl">Etsy conversion rate target</div><div class="kpi-sub">industry benchmark</div></div>
   </div>
   <div style="display:flex;gap:10px;flex-wrap:wrap">
     <button class="action-btn btn-primary" data-switch="store"><i class="ti ti-store"></i>Start: store setup</button>
@@ -353,8 +603,7 @@ body{background:#fafaf9;font-family:var(--font-sans);color:var(--color-text-prim
         <li>Photo 2: lifestyle — oil poured onto skin, warm light</li>
         <li>Photo 3: botanical flatlay — ingredients beside the bottle</li>
         <li>Photo 4: size comparison (50ml vs 100ml side by side)</li>
-        <li>Photo 5: gift-ready packaging shot</li>
-        <li>Use Canva mockups for any photography gaps</li>
+        <li>Photo 5: gift-ready packaging shot · Use Canva mockups for gaps</li>
       </ul>
       <button class="action-btn btn-ghost" data-prompt="Give me a Canva mockup photography brief for Project Mira Etsy product listings"><i class="ti ti-camera"></i>Photography brief ↗</button>
     </div>
@@ -366,7 +615,7 @@ body{background:#fafaf9;font-family:var(--font-sans);color:var(--color-text-prim
   <div class="section-header">
     <div class="section-eyebrow">Listing strategy</div>
     <h2>Product launch sequence &amp; SEO positioning</h2>
-    <p>All singles go live before bundles — this lets Etsy's algorithm cross-reference your products and boosts overall shop visibility.</p>
+    <p>All singles go live before bundles — this lets Etsy's algorithm cross-reference your products and boosts overall shop visibility before the high-ticket sets appear.</p>
   </div>
   <div class="timeline">
     <div class="tl-item">
@@ -387,7 +636,7 @@ body{background:#fafaf9;font-family:var(--font-sans);color:var(--color-text-prim
       <div class="tl-dot"></div>
       <div class="tl-week">Week 3</div>
       <h4>Positive Energy Burst · Sunshine Armor · Haldi Harmony</h4>
-      <p>Sunshine Armor is a seasonal anchor — lead with "natural SPF body oil" and "pre-swim protection" for summer traffic.</p>
+      <p>Sunshine Armor is a seasonal anchor — lead with "natural SPF body oil" and "pre-swim protection" for summer traffic. Haldi Harmony rounds out the collection as an upsell.</p>
       <div class="tl-tags"><span class="tl-tag">citrus energy oil</span><span class="tl-tag">natural sun protection</span><span class="tl-tag">pre-swim oil</span></div>
     </div>
     <div class="tl-item">
@@ -398,8 +647,8 @@ body{background:#fafaf9;font-family:var(--font-sans);color:var(--color-text-prim
       <div class="tl-tags"><span class="tl-tag">body oil gift set</span><span class="tl-tag">gift for her</span><span class="tl-tag">custom oil set</span><span class="tl-tag">self care gift</span></div>
     </div>
   </div>
-  <div class="note-bar"><i class="ti ti-info-circle" style="margin-right:6px"></i>All 3 gift sets are currently <strong>sold out on Shopify</strong>. Restock before listing on Etsy — gift sets are your highest-ticket item and biggest holiday revenue driver.</div>
-  <div class="section-eyebrow" style="margin-bottom:0.75rem">Hero products</div>
+  <div class="note-bar"><i class="ti ti-info-circle" style="margin-right:7px"></i>All 3 gift sets are currently <strong>sold out on Shopify</strong>. Restock before listing on Etsy — gift sets are your highest-ticket item and biggest holiday revenue driver.</div>
+  <div class="section-eyebrow" style="margin-bottom:0.85rem">Hero products</div>
   <div class="product-grid">
     <div class="product-card hero-p">
       <div class="product-hero-badge"><i class="ti ti-star" style="font-size:11px"></i>Hero #1</div>
@@ -426,25 +675,25 @@ body{background:#fafaf9;font-family:var(--font-sans);color:var(--color-text-prim
       <button class="action-btn btn-ghost" style="width:100%;justify-content:center" data-prompt="Write a full Etsy listing for Royal Elixir Oud body oil with title, description, and 13 tags"><i class="ti ti-writing"></i>Generate full listing ↗</button>
     </div>
   </div>
-  <div class="section-eyebrow" style="margin-bottom:0.75rem">Gift set bundles</div>
+  <div class="section-eyebrow" style="margin-bottom:0.85rem">Gift set bundles</div>
   <div class="bundle-row">
     <div class="bundle-card">
       <h4>Vitality Trio</h4>
       <div class="bundle-price">$90</div>
       <p>Rejuvenating Nectar + Sunshine Armor + Positive Energy Burst. Strength, renewal &amp; energy morning-to-evening ritual.</p>
-      <button class="action-btn btn-ghost" style="width:100%;justify-content:center" data-prompt="Write the full Etsy listing for the Project Mira Vitality Trio gift set"><i class="ti ti-writing"></i>Write listing ↗</button>
+      <button class="action-btn btn-ghost" style="width:100%;justify-content:center;color:#F7EDD8;border-color:rgba(212,168,64,0.3)" data-prompt="Write the full Etsy listing for the Project Mira Vitality Trio gift set"><i class="ti ti-writing"></i>Write listing ↗</button>
     </div>
     <div class="bundle-card">
       <h4>Ananda Collection</h4>
       <div class="bundle-price">$90</div>
       <p>Timeless Rose + Royal Elixir + Muscle Zen. Love, bliss &amp; romance. Perfect Valentine's Day and anniversary gift.</p>
-      <button class="action-btn btn-ghost" style="width:100%;justify-content:center" data-prompt="Write the full Etsy listing for the Project Mira Ananda Collection gift set"><i class="ti ti-writing"></i>Write listing ↗</button>
+      <button class="action-btn btn-ghost" style="width:100%;justify-content:center;color:#F7EDD8;border-color:rgba(212,168,64,0.3)" data-prompt="Write the full Etsy listing for the Project Mira Ananda Collection gift set"><i class="ti ti-writing"></i>Write listing ↗</button>
     </div>
     <div class="bundle-card">
       <h4>Build Your Own Set</h4>
       <div class="bundle-price">$85</div>
       <p>Any 3 oils buyer's choice. Personalized gift angle — strong customization appeal for Etsy shoppers.</p>
-      <button class="action-btn btn-ghost" style="width:100%;justify-content:center" data-prompt="Write the full Etsy listing for the Project Mira Build Your Own Ritual Set"><i class="ti ti-writing"></i>Write listing ↗</button>
+      <button class="action-btn btn-ghost" style="width:100%;justify-content:center;color:#F7EDD8;border-color:rgba(212,168,64,0.3)" data-prompt="Write the full Etsy listing for the Project Mira Build Your Own Ritual Set"><i class="ti ti-writing"></i>Write listing ↗</button>
     </div>
   </div>
 </div>
@@ -469,7 +718,7 @@ body{background:#fafaf9;font-family:var(--font-sans);color:var(--color-text-prim
   <div class="sched-grid">
     <div class="sched-card">
       <div class="sched-head">
-        <div class="sched-icon" style="background:#FAECE7"><i class="ti ti-brand-instagram" style="color:#D85A30;font-size:16px"></i></div>
+        <div class="sched-icon" style="background:#FAECE7"><i class="ti ti-brand-instagram" style="color:#C0502A;font-size:17px"></i></div>
         <div class="sched-plat">Instagram</div>
       </div>
       <div class="sched-row"><span class="sched-day">Mon, Wed, Fri</span><span class="sched-time">9–11am (feed posts)</span></div>
@@ -480,7 +729,7 @@ body{background:#fafaf9;font-family:var(--font-sans);color:var(--color-text-prim
     </div>
     <div class="sched-card">
       <div class="sched-head">
-        <div class="sched-icon" style="background:#E6F1FB"><i class="ti ti-brand-facebook" style="color:#185FA5;font-size:16px"></i></div>
+        <div class="sched-icon" style="background:#E6F1FB"><i class="ti ti-brand-facebook" style="color:#185FA5;font-size:17px"></i></div>
         <div class="sched-plat">Facebook</div>
       </div>
       <div class="sched-row"><span class="sched-day">Thursday, Friday</span><span class="sched-time">1–3pm (peak engagement)</span></div>
@@ -490,7 +739,7 @@ body{background:#fafaf9;font-family:var(--font-sans);color:var(--color-text-prim
       <div class="sched-row"><span class="sched-day">Sunday</span><span class="sched-time">Rest day</span></div>
     </div>
   </div>
-  <div class="section-eyebrow" style="margin-bottom:0.75rem">Content pillars</div>
+  <div class="section-eyebrow" style="margin-bottom:0.85rem">Content pillars</div>
   <div class="content-pillars">
     <div class="pillar-card"><div class="pillar-icon" style="background:#FAEEDA"><i class="ti ti-book" style="color:#854F0B"></i></div><h5>Education</h5><p>Ingredients, skin science, Ayurvedic rituals</p></div>
     <div class="pillar-card"><div class="pillar-icon" style="background:#E1F5EE"><i class="ti ti-history" style="color:#0F6E56"></i></div><h5>Brand story</h5><p>Mirabai legacy, heritage, founder journey</p></div>
@@ -498,19 +747,19 @@ body{background:#fafaf9;font-family:var(--font-sans);color:var(--color-text-prim
     <div class="pillar-card"><div class="pillar-icon" style="background:#FAECE7"><i class="ti ti-heart" style="color:#993C1D"></i></div><h5>Lifestyle</h5><p>Self-care moments, ritual aesthetics</p></div>
     <div class="pillar-card"><div class="pillar-icon" style="background:#F1EFE8"><i class="ti ti-shopping-bag" style="color:#5F5E5A"></i></div><h5>Convert</h5><p>Shop links, gift guides, promos</p></div>
   </div>
-  <div class="section-eyebrow" style="margin-bottom:0.75rem">Seasonal spotlight · July 2026 – March 2027</div>
+  <div class="section-eyebrow" style="margin-bottom:0.85rem">Seasonal spotlight · July 2026 – March 2027</div>
   <div class="cal-grid">
-    <div class="cal-card"><div class="cal-month">July 2026</div><h5>Summer glow season</h5><p>Vitality Trio + Sunshine Armor. National Clean Beauty Day July 15 — run 10% off sale.</p><button class="action-btn btn-ghost" style="margin-top:8px;font-size:11px;padding:6px 10px" data-prompt="Write a July 2026 Etsy summer glow promotion campaign for Project Mira"><i class="ti ti-writing"></i>Generate campaign ↗</button></div>
-    <div class="cal-card"><div class="cal-month">August 2026</div><h5>Self-care awareness</h5><p>Push Build Your Own Set. World Photography Day Aug 19 — IG photo contest, winner gets free oil.</p><button class="action-btn btn-ghost" style="margin-top:8px;font-size:11px;padding:6px 10px" data-prompt="Write an Instagram photo contest brief for Project Mira for August 2026"><i class="ti ti-writing"></i>Generate contest ↗</button></div>
-    <div class="cal-card"><div class="cal-month">September 2026</div><h5>Pre-holiday prep</h5><p>Add "gift for her" + "holiday gift" tags to all listings now. Etsy shoppers browse early.</p><button class="action-btn btn-ghost" style="margin-top:8px;font-size:11px;padding:6px 10px" data-prompt="Write Project Mira September Etsy pre-holiday shop announcement copy"><i class="ti ti-writing"></i>Write announcement ↗</button></div>
-    <div class="cal-card"><div class="cal-month">October 2026</div><h5>Fall rituals</h5><p>Lavender Dream + Royal Elixir cozy autumn ritual angle. Push gift sets early for holiday shoppers.</p><button class="action-btn btn-ghost" style="margin-top:8px;font-size:11px;padding:6px 10px" data-prompt="Write Project Mira autumn ritual Instagram captions for October 2026"><i class="ti ti-writing"></i>Generate captions ↗</button></div>
-    <div class="cal-card"><div class="cal-month">November 2026</div><h5>Peak holiday season</h5><p>Black Friday: 15% storewide. Cyber Monday: free gift wrapping. Triple Etsy Ads budget this month.</p><button class="action-btn btn-ghost" style="margin-top:8px;font-size:11px;padding:6px 10px" data-prompt="Write Project Mira Black Friday Etsy promotion plan and social media posts"><i class="ti ti-writing"></i>Build promo plan ↗</button></div>
-    <div class="cal-card"><div class="cal-month">December 2026</div><h5>Gift season peak</h5><p>Ananda Collection for holiday romance gifting. Last shipping date countdown in all posts and Stories.</p><button class="action-btn btn-ghost" style="margin-top:8px;font-size:11px;padding:6px 10px" data-prompt="Write December 2026 holiday gift campaign posts and captions for Project Mira"><i class="ti ti-writing"></i>Generate posts ↗</button></div>
-    <div class="cal-card"><div class="cal-month">January 2027</div><h5>New year, new ritual</h5><p>Push Rejuvenating Nectar + Positive Energy Burst. New Year intention + self-care resolution angle.</p><button class="action-btn btn-ghost" style="margin-top:8px;font-size:11px;padding:6px 10px" data-prompt="Write Project Mira January new year ritual campaign content"><i class="ti ti-writing"></i>Generate content ↗</button></div>
-    <div class="cal-card"><div class="cal-month">February 2027</div><h5>Valentine's Day</h5><p>Ananda Collection as the ultimate couples gift. Royal Elixir as standalone luxury Valentine's pick.</p><button class="action-btn btn-ghost" style="margin-top:8px;font-size:11px;padding:6px 10px" data-prompt="Write Project Mira Valentines Day campaign Instagram captions and Etsy listing updates"><i class="ti ti-writing"></i>Write campaign ↗</button></div>
-    <div class="cal-card"><div class="cal-month">March–May 2027</div><h5>Spring + Mother's Day</h5><p>IWD March 8: "For the woman who deserves to bloom." Mother's Day: all gift sets front and center.</p><button class="action-btn btn-ghost" style="margin-top:8px;font-size:11px;padding:6px 10px" data-prompt="Write a Mothers Day gift guide campaign for Project Mira Etsy gift sets"><i class="ti ti-writing"></i>Build gift guide ↗</button></div>
+    <div class="cal-card"><div class="cal-month">July 2026</div><h5>Summer glow season</h5><p>Vitality Trio + Sunshine Armor. National Clean Beauty Day July 15 — run 10% off sale.</p><button class="action-btn btn-ghost" style="margin-top:8px;font-size:12px;padding:7px 11px" data-prompt="Write a July 2026 Etsy summer glow promotion campaign for Project Mira"><i class="ti ti-writing"></i>Generate campaign ↗</button></div>
+    <div class="cal-card"><div class="cal-month">August 2026</div><h5>Self-care awareness</h5><p>Push Build Your Own Set. World Photography Day Aug 19 — IG photo contest, winner gets free oil.</p><button class="action-btn btn-ghost" style="margin-top:8px;font-size:12px;padding:7px 11px" data-prompt="Write an Instagram photo contest brief for Project Mira for August 2026"><i class="ti ti-writing"></i>Generate contest ↗</button></div>
+    <div class="cal-card"><div class="cal-month">September 2026</div><h5>Pre-holiday prep</h5><p>Add "gift for her" + "holiday gift" tags to all listings now. Etsy shoppers browse early.</p><button class="action-btn btn-ghost" style="margin-top:8px;font-size:12px;padding:7px 11px" data-prompt="Write Project Mira September Etsy pre-holiday shop announcement copy"><i class="ti ti-writing"></i>Write announcement ↗</button></div>
+    <div class="cal-card"><div class="cal-month">October 2026</div><h5>Fall rituals</h5><p>Lavender Dream + Royal Elixir cozy autumn ritual angle. Push gift sets early for holiday shoppers.</p><button class="action-btn btn-ghost" style="margin-top:8px;font-size:12px;padding:7px 11px" data-prompt="Write Project Mira autumn ritual Instagram captions for October 2026"><i class="ti ti-writing"></i>Generate captions ↗</button></div>
+    <div class="cal-card"><div class="cal-month">November 2026</div><h5>Peak holiday season</h5><p>Black Friday: 15% storewide. Cyber Monday: free gift wrapping. Triple Etsy Ads budget this month.</p><button class="action-btn btn-ghost" style="margin-top:8px;font-size:12px;padding:7px 11px" data-prompt="Write Project Mira Black Friday Etsy promotion plan and social media posts"><i class="ti ti-writing"></i>Build promo plan ↗</button></div>
+    <div class="cal-card"><div class="cal-month">December 2026</div><h5>Gift season peak</h5><p>Ananda Collection for holiday romance gifting. Last shipping date countdown in all posts and Stories.</p><button class="action-btn btn-ghost" style="margin-top:8px;font-size:12px;padding:7px 11px" data-prompt="Write December 2026 holiday gift campaign posts and captions for Project Mira"><i class="ti ti-writing"></i>Generate posts ↗</button></div>
+    <div class="cal-card"><div class="cal-month">January 2027</div><h5>New year, new ritual</h5><p>Push Rejuvenating Nectar + Positive Energy Burst. New Year intention + self-care resolution angle.</p><button class="action-btn btn-ghost" style="margin-top:8px;font-size:12px;padding:7px 11px" data-prompt="Write Project Mira January new year ritual campaign content"><i class="ti ti-writing"></i>Generate content ↗</button></div>
+    <div class="cal-card"><div class="cal-month">February 2027</div><h5>Valentine's Day</h5><p>Ananda Collection as the ultimate couples gift. Royal Elixir as standalone luxury Valentine's pick.</p><button class="action-btn btn-ghost" style="margin-top:8px;font-size:12px;padding:7px 11px" data-prompt="Write Project Mira Valentines Day campaign Instagram captions and Etsy listing updates"><i class="ti ti-writing"></i>Write campaign ↗</button></div>
+    <div class="cal-card"><div class="cal-month">March–May 2027</div><h5>Spring + Mother's Day</h5><p>IWD March 8: "For the woman who deserves to bloom." Mother's Day: all gift sets front and center.</p><button class="action-btn btn-ghost" style="margin-top:8px;font-size:12px;padding:7px 11px" data-prompt="Write a Mothers Day gift guide campaign for Project Mira Etsy gift sets"><i class="ti ti-writing"></i>Build gift guide ↗</button></div>
   </div>
-  <div class="section-eyebrow" style="margin-bottom:0.75rem">Hashtag strategy</div>
+  <div class="section-eyebrow" style="margin-bottom:0.85rem">Hashtag strategy</div>
   <div class="hashtag-groups">
     <div class="hashtag-group"><h5>Brand hashtags — use on every post</h5><div class="ht-tags"><span class="ht-tag ht-brand">#ProjectMira</span><span class="ht-tag ht-brand">#MiraRitual</span><span class="ht-tag ht-brand">#PMProjectMira</span><span class="ht-tag ht-brand">#BornInIndiaMadeInUSA</span><span class="ht-tag ht-brand">#MirabaiInspired</span></div></div>
     <div class="hashtag-group"><h5>High volume — 3–5 per post (1M+ posts)</h5><div class="ht-tags"><span class="ht-tag ht-high">#BodyOil</span><span class="ht-tag ht-high">#SelfCare</span><span class="ht-tag ht-high">#NaturalSkincare</span><span class="ht-tag ht-high">#CleanBeauty</span><span class="ht-tag ht-high">#SmallBusiness</span><span class="ht-tag ht-high">#GlowingSkin</span></div></div>
@@ -538,10 +787,11 @@ body{background:#fafaf9;font-family:var(--font-sans);color:var(--color-text-prim
   </div>
 </div>
 
-</div>
+</div><!-- end .content-panel -->
+</div><!-- end .wrap -->
 
 <script>
-// ── Tab switching ──────────────────────────────────────────────
+// ── Tab switching ─────────────────────────────────────────
 var tabs = ['overview','store','products','smm','calendar','checklist'];
 
 function switchTab(id) {
@@ -554,17 +804,16 @@ function switchTab(id) {
   });
 }
 
-// Wire up nav buttons
 document.querySelectorAll('.nav-btn').forEach(function(b) {
   b.addEventListener('click', function() { switchTab(b.dataset.tab); });
 });
 
-// ── sendPrompt: opens Claude in a new tab ──────────────────────
+// ── sendPrompt: opens Claude with pre-filled prompt ──────
 function sendPrompt(text) {
   window.open('https://claude.ai/new?q=' + encodeURIComponent(text), '_blank');
 }
 
-// Wire up all data-prompt buttons
+// ── Global click delegation ──────────────────────────────
 document.addEventListener('click', function(e) {
   var btn = e.target.closest('[data-prompt]');
   if (btn) { sendPrompt(btn.dataset.prompt); return; }
@@ -572,17 +821,16 @@ document.addEventListener('click', function(e) {
   if (sw) { switchTab(sw.dataset.switch); }
 });
 
-// Reset checklist button
 document.getElementById('reset-btn').addEventListener('click', function() {
   checkState = [];
   buildChecklist();
 });
 
-// ── SMM accordions ─────────────────────────────────────────────
+// ── SMM Accordions ───────────────────────────────────────
 var smmData = [
   {num:'Q',title:'Strategic questions',meta:'Foundation',content:'<p>The six core questions that shape every decision in this roadmap:</p><ul><li><i class="ti ti-users"></i><strong>Who is buying?</strong> Women 25–45, wellness-conscious, self-care ritual practitioners, and gift buyers for occasions</li><li><i class="ti ti-bulb"></i><strong>What problem does PM solve?</strong> Stress, muscle pain, dull skin, and the desire for a clean luxurious daily ritual with cultural depth</li><li><i class="ti ti-leaf"></i><strong>Why Project Mira?</strong> Mirabai heritage, Ayurvedic roots, small-batch craftsmanship, clean ingredients — no brand on Etsy tells this story</li><li><i class="ti ti-device-mobile"></i><strong>Where do buyers discover us?</strong> Instagram hashtags, Etsy search, influencer content, Pinterest pins, and curated gift guides</li><li><i class="ti ti-chart-line"></i><strong>What does success look like?</strong> 150 bottles/month by Month 4 unlocking 20% commission; 300/month by Month 6 at 25%</li><li><i class="ti ti-target"></i><strong>What is our edge?</strong> Mood-based positioning (calm/recovery/glow) is exactly how Etsy shoppers search — and no competitor has the Mirabai brand narrative</li></ul>',actions:[{label:'Refine PM positioning',prompt:'Help me sharpen the Project Mira Etsy positioning statement to stand out from competitors'},{label:'Identify more search gaps',prompt:'What other underserved niches exist on Etsy for natural body oils that Project Mira could target?'}]},
   {num:'1',title:'SMART goals',meta:'Month 1–6 targets',content:'<ul><li><i class="ti ti-target"></i><strong>Specific:</strong> Launch Etsy store with 3 hero products + 4 bundle sets within 5 weeks</li><li><i class="ti ti-chart-bar"></i><strong>Measurable:</strong> 30 bottles/month by Month 1, 150 by Month 4, 300 by Month 6</li><li><i class="ti ti-circle-check"></i><strong>Attainable:</strong> Build a 4.8-star review base with at least 10 reviews in the first 60 days</li><li><i class="ti ti-world"></i><strong>Relevant:</strong> Expand PM revenue beyond Shopify into Etsy 90M+ active buyer base</li><li><i class="ti ti-clock"></i><strong>Time-bound:</strong> First Etsy sale within 30 days of store opening — Instagram hitting 5K followers by Month 6</li></ul>',actions:[{label:'Build monthly sales tracker',prompt:'Create a monthly sales tracking template for Project Mira Etsy store to measure progress toward 150 and 300 bottle targets'},{label:'Review goal milestones',prompt:'What milestones should I check weekly to know if Project Mira Etsy is on track?'}]},
-  {num:'2',title:'Audience personas',meta:'4 buyer profiles',content:'<ul><li><i class="ti ti-user"></i><strong>The Ritual Seeker</strong> — Female, 28–40, practices yoga or meditation, shops clean beauty, follows wellness influencers. Wants a meaningful evening self-care routine, not just a moisturizer.</li><li><i class="ti ti-gift"></i><strong>The Gift Giver</strong> — Any gender, 30–55, shops Etsy specifically for meaningful artisan gifts. Willing to spend $85–90 on a gift set. Attracted to beautiful packaging and a compelling brand story.</li><li><i class="ti ti-barbell"></i><strong>The Active Recoverer</strong> — Female or male, 25–45, gym-goer or yoga practitioner. Needs functional body care post-workout. Muscle Zen Harmony is their entry point.</li><li><i class="ti ti-crown"></i><strong>The Luxury Seeker</strong> — Female, 35–55, loves oud, rose, and exotic botanicals. Premium positioning matters. Royal Elixir is designed for her.</li></ul>',actions:[{label:'Write persona captions',prompt:'Write one Instagram caption for each of the 4 Project Mira buyer personas — Ritual Seeker, Gift Giver, Active Recoverer, and Luxury Seeker'},{label:'Persona targeting guide',prompt:'How do I target each of the 4 Project Mira buyer personas differently on Instagram vs Facebook vs Etsy?'}]},
+  {num:'2',title:'Audience personas',meta:'4 buyer profiles',content:'<ul><li><i class="ti ti-user"></i><strong>The Ritual Seeker</strong> — Female, 28–40, practices yoga or meditation, shops clean beauty. Wants a meaningful evening self-care routine, not just a moisturizer.</li><li><i class="ti ti-gift"></i><strong>The Gift Giver</strong> — Any gender, 30–55, shops Etsy for meaningful artisan gifts. Willing to spend $85–90 on a gift set. Attracted to beautiful packaging and a compelling brand story.</li><li><i class="ti ti-barbell"></i><strong>The Active Recoverer</strong> — Female or male, 25–45, gym-goer or yoga practitioner. Needs functional body care post-workout. Muscle Zen Harmony is their entry point.</li><li><i class="ti ti-crown"></i><strong>The Luxury Seeker</strong> — Female, 35–55, loves oud, rose, and exotic botanicals. Premium positioning matters. Royal Elixir is designed for her.</li></ul>',actions:[{label:'Write persona captions',prompt:'Write one Instagram caption for each of the 4 Project Mira buyer personas — Ritual Seeker, Gift Giver, Active Recoverer, and Luxury Seeker'},{label:'Persona targeting guide',prompt:'How do I target each of the 4 Project Mira buyer personas differently on Instagram vs Facebook vs Etsy?'}]},
   {num:'3',title:'Competitor analysis',meta:'Gaps & advantages',content:'<ul><li><i class="ti ti-building-store"></i><strong>Direct Etsy competitors:</strong> Banyan Botanicals, Kama Ayurveda (partial Etsy presence), and scattered indie body oil sellers — most lack a brand story as compelling as Mirabai</li><li><i class="ti ti-trending-up"></i><strong>Gap 1 — Muscle recovery oil:</strong> Underserved category. Muscle Zen Harmony has strong early-mover advantage.</li><li><i class="ti ti-star"></i><strong>Gap 2 — Oud body oil:</strong> Trending heavily on Etsy. Very few handmade artisan options in the $25–35 price range. Royal Elixir is well positioned.</li><li><i class="ti ti-leaf"></i><strong>PM advantage:</strong> Mood-based positioning (calm/recovery/glow) is exactly how Etsy shoppers search.</li><li><i class="ti ti-coin"></i><strong>Pricing:</strong> $30 is the Etsy handmade beauty sweet spot. PM is positioned at the trust-without-barrier tier.</li></ul>',actions:[{label:'Competitive keyword audit',prompt:'What Etsy SEO keywords are competitors ranking for that Project Mira should target for Lavender Dream, Muscle Zen, and Royal Elixir?'},{label:'Pricing strategy check',prompt:'Should Project Mira adjust Etsy pricing strategy vs the $30 Shopify price point for any products?'}]},
   {num:'4',title:'Platforms',meta:'Priority + role of each',content:'<ul><li><i class="ti ti-shopping-bag"></i><strong>Etsy (primary sales):</strong> All energy here first. SEO + product photography + pricing + reviews are the four levers.</li><li><i class="ti ti-brand-instagram"></i><strong>Instagram (primary SMM):</strong> Reels for discovery, carousels for education, Stories for community. Link in bio to Etsy.</li><li><i class="ti ti-brand-facebook"></i><strong>Facebook (secondary):</strong> Longer captions, community-building, sharing IG posts. Thursday–Friday 1–3pm peak.</li><li><i class="ti ti-brand-pinterest"></i><strong>Pinterest (evergreen):</strong> Pin product photos with keyword-rich descriptions linking to Etsy.</li><li><i class="ti ti-brand-youtube"></i><strong>YouTube (existing):</strong> Long-form brand story, ingredient deep-dives, ritual how-to videos. Link to Etsy in every video description.</li></ul>',actions:[{label:'Pinterest strategy',prompt:'Build a Project Mira Pinterest strategy to drive evergreen traffic to the Etsy store'},{label:'Cross-platform plan',prompt:'How should Project Mira coordinate content across Instagram, Facebook, Pinterest, and Etsy in the first 30 days?'}]},
   {num:'5',title:'Content pillars',meta:'5 recurring themes',content:'<p>Every post should belong to one of these five pillars. Aim for 2 education, 2 lifestyle/story, 1 social proof, and 1 conversion post per week.</p><ul><li><i class="ti ti-book"></i><strong>Product Education (30%):</strong> Ingredients breakdowns, skin science, Ayurvedic ritual explanations. Builds trust and justifies premium pricing.</li><li><i class="ti ti-history"></i><strong>Brand Story (20%):</strong> Mirabai legacy, Indian wellness heritage, founder journey. This is Project Mira strongest differentiator on Etsy.</li><li><i class="ti ti-star"></i><strong>Social Proof (20%):</strong> Customer reviews, user-generated content reposts, before/after testimonials.</li><li><i class="ti ti-heart"></i><strong>Lifestyle and Ritual (20%):</strong> Aesthetic self-care moments, morning/evening ritual content, mood boards.</li><li><i class="ti ti-shopping-bag"></i><strong>Conversion (10%):</strong> Etsy shop announcements, gift guides, limited-time promotions. Never more than 10% or it feels salesy.</li></ul>',actions:[{label:'Generate week of content',prompt:'Plan one full week of Project Mira Instagram posts across all 5 content pillars with captions'},{label:'Content ratio check',prompt:'Review my Project Mira content mix and tell me if it is balanced correctly across the 5 pillars'}]},
@@ -590,7 +838,7 @@ var smmData = [
   {num:'7',title:'Content formats',meta:'Instagram + Facebook',content:'<ul><li><i class="ti ti-player-play"></i><strong>Instagram Reels (30–60s):</strong> Oil texture pour shot, morning ritual routine, ingredient spotlight. Post 6–9pm for best discovery.</li><li><i class="ti ti-layout-columns"></i><strong>Carousels (6–10 slides):</strong> Educational, saveable, shareable. Great for skin science and ingredient content.</li><li><i class="ti ti-photo"></i><strong>Static posts:</strong> Beautiful product photography with poetic caption — the signature PM aesthetic.</li><li><i class="ti ti-circle"></i><strong>Stories (daily):</strong> Behind-the-scenes, polls, countdown to launches, UGC reposts, This or That product comparisons.</li><li><i class="ti ti-writing"></i><strong>Facebook long-form captions:</strong> Full product education posts, complete customer stories, Ayurvedic educational essays.</li></ul>',actions:[{label:'Write a product Reel script',prompt:'Write a 30-second Instagram Reel script for Lavender Dream body oil by Project Mira'},{label:'Write a carousel post',prompt:'Write a 7-slide Instagram carousel about the Mirabai story behind Project Mira'}]},
   {num:'8',title:'Posting schedule',meta:'Data-backed timing',content:'<ul><li><i class="ti ti-brand-instagram"></i><strong>Instagram:</strong> Mon/Wed/Fri at 9–11am for feed posts, Tue/Thu at 12–1pm for carousels, Reels at 6–9pm, Daily Stories anytime</li><li><i class="ti ti-brand-facebook"></i><strong>Facebook:</strong> Thursday + Friday 1–3pm (peak), Monday + Wednesday 10–11am, 4–5 posts per week total</li><li><i class="ti ti-sun"></i><strong>Best posting days:</strong> Tuesday, Wednesday, Thursday show consistently highest engagement across both platforms</li><li><i class="ti ti-tool"></i><strong>Scheduling tool recommendation:</strong> Later or Buffer for Instagram, Native Facebook scheduler for FB</li></ul>',actions:[{label:'Generate weekly schedule',prompt:'Create a detailed weekly content posting schedule for Project Mira across Instagram and Facebook with specific times and post types for each slot'},{label:'Scheduling tool advice',prompt:'Which scheduling tool is best for Project Mira to manage Instagram and Facebook posting in 2026?'}]},
   {num:'9',title:'Paid advertising',meta:'Etsy Ads + social boosts',content:'<ul><li><i class="ti ti-shopping-bag"></i><strong>Etsy Ads (Month 1–2):</strong> Start $1–3/day on the 3 hero listings. Increase budget for the top-performing listing only.</li><li><i class="ti ti-world"></i><strong>Etsy Offsite Ads:</strong> Enable from day 1. Etsy places your listings on Google Shopping, Facebook, and Pinterest at no upfront cost.</li><li><i class="ti ti-brand-instagram"></i><strong>Instagram Boost (Month 3+):</strong> Boost the top-performing Reel. Target: women 25–44, interests in yoga, clean beauty, self-care. Budget: $5–10/day.</li><li><i class="ti ti-clock"></i><strong>Timing:</strong> Triple all ad budgets in November for Black Friday/Cyber Monday. Return to baseline in January.</li></ul>',actions:[{label:'Build Etsy Ads strategy',prompt:'Build a complete Etsy Ads strategy for Project Mira — which listings to run, budgets by month, and how to optimize'},{label:'Instagram Ads brief',prompt:'Write a Project Mira Instagram ad brief for a Lavender Dream awareness campaign targeting wellness buyers aged 25 to 44'}]},
-  {num:'10',title:'Community management',meta:'Reviews + DMs + UGC',content:'<ul><li><i class="ti ti-star"></i><strong>Etsy reviews:</strong> Reply to every review — personalize with the buyer name and their specific product. A warm reply signals quality to other shoppers.</li><li><i class="ti ti-message"></i><strong>Instagram comments:</strong> Reply to all comments within 3 hours of posting — the first 3 hours is when the algorithm amplifies your post.</li><li><i class="ti ti-mail"></i><strong>DMs:</strong> Respond within 24 hours. Offer product matching guidance.</li><li><i class="ti ti-photo"></i><strong>UGC:</strong> Create a Mira Ritual Community Highlight on IG for customer reposts. Run monthly share your ritual UGC campaign.</li><li><i class="ti ti-send"></i><strong>Post-purchase:</strong> Send an Etsy message 5–7 days after delivery asking for a review. Keep it personal.</li></ul>',actions:[{label:'Write review reply templates',prompt:'Write 5 different Project Mira Etsy review reply templates for 5-star, 4-star, and reviews that mention specific products'},{label:'DM response scripts',prompt:'Write 5 Project Mira Instagram DM response scripts for common questions about which oil to buy'}]},
+  {num:'10',title:'Community management',meta:'Reviews + DMs + UGC',content:'<ul><li><i class="ti ti-star"></i><strong>Etsy reviews:</strong> Reply to every review — personalize with the buyer name and their specific product. A warm reply signals quality to other shoppers.</li><li><i class="ti ti-message"></i><strong>Instagram comments:</strong> Reply to all comments within 3 hours of posting — the first 3 hours is when the algorithm amplifies your post.</li><li><i class="ti ti-mail"></i><strong>DMs:</strong> Respond within 24 hours. Offer product matching guidance — "Not sure which oil? Tell us your mood and we will match you."</li><li><i class="ti ti-photo"></i><strong>UGC:</strong> Create a Mira Ritual Community Highlight on IG for customer reposts. Run monthly share your ritual UGC campaign.</li><li><i class="ti ti-send"></i><strong>Post-purchase:</strong> Send an Etsy message 5–7 days after delivery asking for a review. Keep it personal.</li></ul>',actions:[{label:'Write review reply templates',prompt:'Write 5 different Project Mira Etsy review reply templates for 5-star, 4-star, and reviews that mention specific products'},{label:'DM response scripts',prompt:'Write 5 Project Mira Instagram DM response scripts for common questions about which oil to buy'}]},
   {num:'11',title:'Influencer & partnerships',meta:'Micro-influencer strategy',content:'<ul><li><i class="ti ti-users"></i><strong>Target tier:</strong> Micro-influencers (5K–50K followers) in wellness, Ayurveda, clean beauty, and yoga.</li><li><i class="ti ti-search"></i><strong>Outreach priority:</strong> IG creators who post about self-care rituals, night routines, morning ritual aesthetics. Search hashtags like #AyurvedicSkincare and #SelfCareRitual.</li><li><i class="ti ti-gift"></i><strong>The offer:</strong> Send a free product bundle (Ananda Collection or Vitality Trio at $90 value) in exchange for an honest review Reel or Story series.</li><li><i class="ti ti-calendar"></i><strong>Timeline:</strong> Begin outreach in Month 2. Send 5–10 gifting packages. Expect 50–70% to post.</li></ul>',actions:[{label:'Write outreach DM',prompt:'Write a Project Mira influencer outreach DM to send to an Ayurvedic wellness micro-influencer on Instagram offering a gifting partnership'},{label:'Build influencer brief',prompt:'Write a Project Mira influencer content brief to send to a micro-influencer who agrees to the gifting partnership'}]},
   {num:'12',title:'KPIs & metrics',meta:'What to measure',content:'<ul><li><i class="ti ti-shopping-cart"></i><strong>Etsy sales:</strong> 30 bottles/mo (Month 1), 150/mo (Month 4, 20% commission), 300/mo (Month 6, 25% commission)</li><li><i class="ti ti-star"></i><strong>Etsy reviews:</strong> 10 reviews by Day 60, 4.8 star average maintained — reviews are the #1 Etsy ranking signal</li><li><i class="ti ti-eye"></i><strong>Etsy listing views:</strong> Track weekly in Etsy Shop Stats — any listing with high views but low sales needs a photography or pricing fix</li><li><i class="ti ti-chart-line"></i><strong>Instagram growth:</strong> 500 followers by Month 1, 2,000 by Month 3, 5,000 by Month 6</li><li><i class="ti ti-percent"></i><strong>Etsy conversion rate:</strong> Target 3–5%. If below 2%, the problem is photos or title. If views are low, the problem is SEO/tags.</li></ul>',actions:[{label:'Build KPI dashboard',prompt:'Build a simple weekly KPI tracking template for Project Mira covering Etsy sales, Instagram growth, reviews, and conversion rate'},{label:'Reporting rhythm',prompt:'What should the weekly, monthly, and quarterly reporting rhythm look like for the Project Mira Etsy and SMM operation?'}]},
   {num:'13',title:'Reporting & optimization',meta:'Weekly, monthly, quarterly',content:'<ul><li><i class="ti ti-calendar-week"></i><strong>Weekly:</strong> Check Etsy Shop Stats — views, favorites, conversion per listing. Pause underperforming ad spend.</li><li><i class="ti ti-calendar"></i><strong>Monthly:</strong> Pull Instagram Insights — top-performing posts, reach, profile visits, link-in-bio clicks.</li><li><i class="ti ti-ab"></i><strong>Monthly A/B testing:</strong> Swap one keyword at a time in listing titles to test ranking improvement.</li><li><i class="ti ti-clock"></i><strong>Quarterly full audit:</strong> Review all listing tags, descriptions, photos, pricing, and competitor positioning.</li><li><i class="ti ti-chart-bar"></i><strong>Rule of thumb:</strong> If an Etsy listing has 200+ views but fewer than 5 sales, fix the main photo first, then the description, then consider pricing.</li></ul>',actions:[{label:'Monthly report template',prompt:'Write a monthly performance report template for the Project Mira Etsy store and social media operation'},{label:'Etsy listing audit',prompt:'Help me audit a Project Mira Etsy listing — what are the most common reasons a listing gets views but no sales?'}]}
@@ -605,40 +853,36 @@ function buildSMM() {
     var id = 'acc-' + idx;
     var wrapper = document.createElement('div');
     wrapper.className = 'smm-accordion';
-
     var actionsHtml = item.actions.map(function(a) {
-      return '<button class="action-btn btn-ghost" data-prompt="' + a.prompt.replace(/"/g, '&quot;') + '" style="font-size:12px;padding:7px 12px"><i class="ti ti-arrow-right"></i>' + a.label + ' ↗</button>';
+      return '<button class="action-btn btn-ghost" data-prompt="' + a.prompt.replace(/"/g,'&quot;') + '" style="font-size:12px;padding:8px 13px"><i class="ti ti-arrow-right"></i>' + a.label + ' ↗</button>';
     }).join('');
-
     wrapper.innerHTML =
-      '<div class="acc-header" id="h' + id + '">' +
-        '<div class="acc-num">' + item.num + '</div>' +
-        '<div class="acc-title">' + item.title + '</div>' +
-        '<div class="acc-meta">' + item.meta + '</div>' +
-        '<i class="ti ti-chevron-down acc-chevron" id="c' + id + '"></i>' +
+      '<div class="acc-header" id="h'+id+'">' +
+        '<div class="acc-num">'+item.num+'</div>' +
+        '<div class="acc-title">'+item.title+'</div>' +
+        '<div class="acc-meta">'+item.meta+'</div>' +
+        '<i class="ti ti-chevron-down acc-chevron" id="c'+id+'"></i>' +
       '</div>' +
-      '<div class="acc-body" id="b' + id + '">' +
-        (item.content || '') +
-        '<div class="acc-actions">' + actionsHtml + '</div>' +
+      '<div class="acc-body" id="b'+id+'">' +
+        (item.content||'') +
+        '<div class="acc-actions">'+actionsHtml+'</div>' +
       '</div>';
-
     list.appendChild(wrapper);
-
-    document.getElementById('h' + id).addEventListener('click', function() { toggleAcc(idx); });
+    document.getElementById('h'+id).addEventListener('click', function(){ toggleAcc(idx); });
   });
 }
 
 function toggleAcc(idx) {
   var id = 'acc-' + idx;
-  var header = document.getElementById('h' + id);
-  var body = document.getElementById('b' + id);
-  var chevron = document.getElementById('c' + id);
+  var header = document.getElementById('h'+id);
+  var body = document.getElementById('b'+id);
+  var chevron = document.getElementById('c'+id);
   var isOpen = body.classList.contains('open');
   if (openAcc !== null && openAcc !== idx) {
     var oid = 'acc-' + openAcc;
-    document.getElementById('b' + oid).classList.remove('open');
-    document.getElementById('h' + oid).classList.remove('open');
-    document.getElementById('c' + oid).classList.remove('open');
+    document.getElementById('b'+oid).classList.remove('open');
+    document.getElementById('h'+oid).classList.remove('open');
+    document.getElementById('c'+oid).classList.remove('open');
   }
   body.classList.toggle('open', !isOpen);
   header.classList.toggle('open', !isOpen);
@@ -646,7 +890,7 @@ function toggleAcc(idx) {
   openAcc = isOpen ? null : idx;
 }
 
-// ── Checklist ──────────────────────────────────────────────────
+// ── Checklist ─────────────────────────────────────────────
 var checkItems = [
   'Restock all 3 gift sets (sold out on Shopify)',
   'Restock Haldi Harmony scrub (sold out)',
